@@ -25,12 +25,20 @@ function addFriend(){
     }
 }
 
-//Function for clean input
+//Function to clean input
 function cleanInput() {
     document.getElementById("amigo").value = "";
 }
-
-// function for add in the html string
-
-
-//addPerson("Duvan");
+// function to draw friend list
+function sortearAmigo(){
+    if (personas.length === 0) {
+        alert("No hay personas agregadas.");
+        return;
+    }else {
+        let randomFriend = Math.floor(Math.random() * personas.length);
+        console.log("AL AZAR: "+personas[randomFriend]);
+        document.getElementById("listaAmigos").innerHTML = "";
+        document.getElementById("resultado").innerHTML += `<li>El amigo Secreto Sorteado es : ${personas[randomFriend]}</li>`;
+    }
+    
+}
