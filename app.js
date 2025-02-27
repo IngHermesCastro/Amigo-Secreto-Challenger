@@ -1,4 +1,4 @@
-// El principal objetivo de este desafío es fortalecer tus habilidades en lógica de programación. Aquí deberás desarrollar la lógica para resolver el problema.
+// El principal objetivo de este desafío es fortalecer mis habilidades en lógica de programación. Aquí deberia desarrollar la lógica para resolver el problema.
 // Array para guardar los nombres de las personas.
 let personas = [];
 
@@ -17,8 +17,20 @@ function addFriend(){
         return;
     } else {
         addPerson(friend);
+        let list = document.getElementById("listaAmigos");
+        list.innerHTML += `<li>${friend}</li>`;
+
+        cleanInput();
+
     }
-    
 }
+
+//Function for clean input
+function cleanInput() {
+    document.getElementById("amigo").value = "";
+}
+
+// function for add in the html string
+
 
 //addPerson("Duvan");
