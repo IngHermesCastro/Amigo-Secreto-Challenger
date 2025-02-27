@@ -5,6 +5,10 @@ let personas = [];
 // Función para agregar un nombre a la lista.
 function addPerson(persona){
     // Agregar el nombre al array de personas.
+    if (personas.includes(persona)){
+        alert("El nombre ya existe.");
+        return;
+    }
     personas.push(persona);
     console.log(personas);
 
@@ -37,8 +41,12 @@ function sortearAmigo(){
     }else {
         let randomFriend = Math.floor(Math.random() * personas.length);
         console.log("AL AZAR: "+personas[randomFriend]);
+
         document.getElementById("listaAmigos").innerHTML = "";
+        document.getElementById("resultado").innerHTML = "";
         document.getElementById("resultado").innerHTML += `<li>El amigo Secreto Sorteado es : ${personas[randomFriend]}</li>`;
+        personas.splice(randomFriend, 1);
+        
     }
     
 }
